@@ -1,0 +1,6 @@
+Pillow>=9.0.0
+exifread>=2.3.2
+pyobjc-framework-Cocoa>=10.0
+opencv-python>=4.8.0
+numpy>=1.24.0
+pyobjc-framework-Vision>=12.0
