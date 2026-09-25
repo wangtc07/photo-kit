@@ -71,6 +71,9 @@ instance/
 # Sphinx documentation
 docs/_build/
 
+# Local design docs and UI mockups
+docs/
+
 # PyBuilder
 .pybuilder/
 target/
