@@ -14,7 +14,8 @@
 
 2. **🖼️ 圖片處理與排版 (`src/image_process/`)**
    - **批次壓縮圖片 (`compress_images.py`)**：將大量高畫質圖片壓縮至 1~2 MB，適合上傳至 Instagram、Twitter、Facebook 等社群平台。
-   - **合併多張照片 (`merge_4_photos.py`)**：快速將四張照片以方陣的形式合併為一張大圖。
+   - **去除白邊 (`remove_white_borders.py`)**：自動偵測並裁切圖片四邊白邊與近白壓縮噪點，可選排除獨立浮水印文字，輸出至指定子資料夾（預設 `trimmed`）。
+   - **合併多張照片 (`combine_photos.py`)**：快速將多張照片以方陣或自訂排版形式合併為一張大圖。
 
 3. **🎬 圖片轉影片 (`src/video_gen/`)**
    - **`main.py`**：將連續編號的照片序列，無縫轉換為 MP4 影片（支援自訂 FPS 幀數，透過參數 `--loop` 亦可產生無窮迴圈效果）。
@@ -74,6 +75,7 @@ run.bat
 [7] 連拍廢片清理 (burst_filter.py)
 [8] 匯出 Capture One 資料夾清單 (export_c1_folders.py)
 [9] チェキ自動裁切 (cheki_crop.py)
+[10] 去除白邊 (remove_white_borders.py)
 [q] 退出
 ==================================================
 請選擇要執行的機能 (例如: 1): 
@@ -98,6 +100,12 @@ run.bat
 | | | `-m` / `-mx` | `--max-dimension` | 最長邊限制像素 (預設 1920) |
 | | | `-s` / `-sz` | `--target-size` | 目標大小 MB (預設 1.5) |
 | | | `-o` | `--out` | 輸出子資料夾名稱 (預設 compressed) |
+| | `remove_white_borders.py` | `-d` / `-f` | `--dir` / `--folder` | 指定圖片資料夾 (留空則彈窗選擇) |
+| | | `-o` | `--out` | 輸出子資料夾名稱 (預設 trimmed) |
+| | | `-t` / `-th` | `--threshold` | 白邊色彩門檻 0~255 (預設 245) |
+| | | `-w` / `-wm` | `--ignore-watermark` | 排除底部獨立浮水印文字 |
+| | | `-p` / `-pd` | `--padding` | 裁切保留邊距像素 (預設 0) |
+| | | `-q` / `-ql` | `--quality` | 輸出圖片品質 1-100 (預設 95) |
 | | `merge_4_photos.py` | `-n` | `--num` | 要合併的照片數量 (預設 4) |
 | | | `-q` / `-ql` | `--quality` | 輸出圖片品質 1-100 (預設 95) |
 | **🎬 影片生成** | `main.py` | `-n` / `-d` | `-name` / `--name` | Downloads 下的子資料夾名稱 |

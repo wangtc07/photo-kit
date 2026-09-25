@@ -32,6 +32,7 @@ def main():
         '7': ('連拍廢片清理 (burst_filter.py)', 'src/file_manage/burst_filter.py'),
         '8': ('匯出 Capture One 資料夾清單 (export_c1_folders.py)', 'src/file_manage/export_c1_folders.py'),
         '9': ('チェキ自動裁切 (cheki_crop.py)', 'src/image_process/cheki_crop.py'),
+        '10': ('去除白邊 (remove_white_borders.py)', 'src/image_process/remove_white_borders.py'),
         'q': ('退出', None)
     }
 
